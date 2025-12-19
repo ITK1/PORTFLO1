@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Nguyễn Văn A | Backend Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="./java/script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">&lt;NVA /&gt;</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#skills">Kỹ năng</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#contact" class="btn-contact">Liên hệ</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <p class="hero-subtitle">Xin chào, tôi là</p>
+          <h1 class="hero-title">Nguyễn Văn A.</h1>
+          <h2 class="hero-role">
+            Tôi là <span class="typing-text"></span
+            ><span class="typing-cursor"></span>
+          </h2>
+          <p class="hero-desc">
+            Tôi xây dựng các hệ thống backend mạnh mẽ và hiệu quả. Đang tìm kiếm
+            cơ hội thực tập/làm việc để đóng góp và phát triển.
+          </p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary"
+              >Xem Dự Án <i class="fas fa-arrow-down"></i
+            ></a>
+            <a
+              href="https://github.com/username-cua-ban"
+              target="_blank"
+              class="btn btn-secondary"
+              ><i class="fab fa-github"></i> GitHub Profile</a
+            >
+          </div>
+        </div>
+        <div class="hero-img-container">
+          <img
+            src="assets/profile.jpg"
+            alt="Ảnh đại diện của tôi"
+            class="hero-img"
+          />
+        </div>
+      </div>
+    </header>
+
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2 class="section-title">Tech Stack Của Tôi</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3><i class="fas fa-server"></i> Backend Core</h3>
+            <div class="skill-list">
+              <span class="skill-tag"><i class="fab fa-php"></i> PHP</span>
+              <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+              <span class="skill-tag">C# (.NET)</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-database"></i> Database</h3>
+            <div class="skill-list">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">SQL Server</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools & Khác</h3>
+            <div class="skill-list">
+              <span class="skill-tag"
+                ><i class="fab fa-git-alt"></i> Git / GitHub</span
+              >
+              <span class="skill-tag"
+                ><i class="fab fa-docker"></i> Docker (Cơ bản)</span
+              >
+              <span class="skill-tag">RESTful API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <h2 class="section-title">Dự Án Nổi Bật</h2>
+        <p class="section-subtitle">
+          Những dự án thực tế tôi đã thực hiện trong quá trình học tập và nghiên
+          cứu.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/project1.jpg" alt="Website Bán Hàng PHP" />
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Website Bán Hàng Điện Tử (PHP)</h3>
+              </div>
+              <p class="project-desc">
+                Hệ thống thương mại điện tử xây dựng bằng PHP thuần theo mô hình
+                MVC. Tính năng bao gồm: Giỏ hàng, Thanh toán, Quản lý đơn hàng
+                cho Admin, Báo cáo doanh thu.
+              </p>
+              <div class="project-tech">
+                <span>PHP (MVC)</span>
+                <span>MySQL</span>
+                <span>Bootstrap 5</span>
+                <span>AJAX</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/username-cua-ban/ten-du-an-1"
+                  target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+                <a href="#" target="_blank" class="demo-link"
+                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/project2.jpg" alt="Phần mềm Quản lý C#" />
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Phần Mềm Quản Lý Thư Viện (C# WinForm)</h3>
+              </div>
+              <p class="project-desc">
+                Ứng dụng Desktop quản lý mượn/trả sách. Sử dụng Entity Framework
+                để thao tác cơ sở dữ liệu, áp dụng kiến trúc 3 lớp. Quản lý độc
+                giả, đầu sách và thống kê vi phạm.
+              </p>
+              <div class="project-tech">
+                <span>C# .NET Framework</span>
+                <span>WinForms</span>
+                <span>SQL Server</span>
+                <span>Entity Framework</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/username-cua-ban/ten-du-an-2"
+                  target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://via.placeholder.com/600x400/1a1a2e/0f3460?text=Java+Project+Screenshot"
+                alt="API Quản lý nhân sự Java"
+              />
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>RESTful API Quản Lý Nhân Sự (Java Spring Boot)</h3>
+              </div>
+              <p class="project-desc">
+                Xây dựng hệ thống Backend API cho ứng dụng quản lý nhân sự. Sử
+                dụng Spring Boot, Spring Security để xác thực JWT, Hibernate để
+                ORM và viết Unit Test với JUnit.
+              </p>
+              <div class="project-tech">
+                <span>Java 17</span>
+                <span>Spring Boot</span>
+                <span>Spring Security (JWT)</span>
+                <span>PostgreSQL</span>
+                <span>JUnit 5</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/username-cua-ban/ten-du-an-3"
+                  target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Liên Hệ Với Tôi</h2>
+        <p class="section-subtitle">
+          Tôi luôn sẵn sàng cho các cơ hội mới. Hãy kết nối nhé!
+        </p>
+        <div class="contact-links">
+          <a href="mailto:email-cua-ban@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>email-cua-ban@gmail.com</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/username-cua-ban"
+            target="_blank"
+            class="contact-item"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Designed & Built by
+        <span style="color: var(--primary-color)">Nguyễn Văn A</span> | © 2023
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
