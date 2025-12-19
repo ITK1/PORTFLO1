@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Nguyễn Văn A | Backend Developer</title>
+    <title>Portfolio - Phan Lê Bá Khang | Android & Web Developer & C#</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,385 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="style/style.css" />
-    <script src="./java/script.js"></script>
+    <style>
+      /* Cấu hình chung */
+      :root {
+        --bg-main: #0a0a16;
+        --bg-secondary: #16213e;
+        --text-primary: #e6e6e6;
+        --text-secondary: #a0a5b5;
+        --primary-color: #00d4ff; /* Xanh Neon */
+        --nav-height: 70px;
+        --font-main: "Poppins", sans-serif;
+        --font-code: "Roboto Mono", monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-main);
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Utility */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: 0.3s;
+      }
+      ul {
+        list-style: none;
+      }
+      .section {
+        padding: 80px 0;
+      }
+      .section-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-secondary);
+        margin-bottom: 50px;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: var(--bg-main);
+      }
+      .btn-primary:hover {
+        background-color: #00a7cc;
+      }
+      .btn-secondary {
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        margin-left: 15px;
+      }
+      .btn-secondary:hover {
+        background-color: rgba(0, 212, 255, 0.1);
+      }
+
+      /* Navbar */
+      .navbar {
+        height: var(--nav-height);
+        background-color: rgba(10, 10, 22, 0.95);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.3s;
+      }
+      .navbar.scrolled {
+        background-color: rgba(10, 10, 22, 1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      }
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+      }
+      .logo {
+        font-family: var(--font-code);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+      .nav-links li {
+        margin-left: 30px;
+      }
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+      .btn-contact {
+        padding: 8px 20px;
+        background-color: rgba(0, 212, 255, 0.1);
+        border-radius: 4px;
+        color: var(--primary-color) !important;
+      }
+      .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding-top: calc(var(--nav-height) + 60px);
+        padding-bottom: 80px;
+      }
+      .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .hero-content {
+        flex: 1;
+        padding-right: 50px;
+      }
+      .hero-subtitle {
+        color: var(--primary-color);
+        font-family: var(--font-code);
+      }
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+      .hero-role {
+        font-size: 1.8rem;
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        height: 40px;
+      }
+      .hero-desc {
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        max-width: 500px;
+      }
+      .hero-img-container {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .hero-img {
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        border: 3px solid var(--primary-color);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+        background-color: #1a1a2e; /* Màu nền dự phòng nếu ảnh lỗi */
+      }
+
+      /* Skills */
+      .skills-section {
+        background-color: var(--bg-secondary);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+      .skill-category h3 {
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      .skill-category h3 i {
+        margin-right: 10px;
+        color: var(--primary-color);
+      }
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .skill-tag {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 8px 15px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-family: var(--font-code);
+        border: 1px solid rgba(0, 212, 255, 0.2);
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+      .project-card {
+        background-color: var(--bg-secondary);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.3s;
+      }
+      .project-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-color);
+      }
+      .project-image {
+        width: 100%;
+        height: 200px;
+        background-color: #0f182b;
+        overflow: hidden;
+      }
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        transition: 0.3s;
+      }
+      .project-card:hover .project-image img {
+        opacity: 1;
+      }
+      .project-content {
+        padding: 25px;
+      }
+      .project-header h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+      }
+      .project-desc {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        min-height: 80px;
+      }
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      .project-tech span {
+        font-size: 0.8rem;
+        font-family: var(--font-code);
+        color: var(--primary-color);
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 10px;
+        border-radius: 4px;
+      }
+      .project-links a {
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* Contact & Footer */
+      .contact-section {
+        background-color: var(--bg-secondary);
+        text-align: center;
+      }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .contact-item {
+        padding: 15px 25px;
+        background: var(--bg-main);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .contact-item:hover {
+        border-color: var(--primary-color);
+      }
+      footer {
+        text-align: center;
+        padding: 30px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+      }
+
+      /* Animation Classes */
+      .hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease;
+      }
+      .show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .typing-cursor::after {
+        content: "|";
+        animation: blink 1s infinite;
+        color: var(--primary-color);
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Responsive Mobile */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+        .nav-links {
+          position: fixed;
+          top: var(--nav-height);
+          left: -100%;
+          background: var(--bg-secondary);
+          width: 100%;
+          flex-direction: column;
+          padding: 30px 0;
+          transition: 0.3s;
+          border-bottom: 2px solid var(--primary-color);
+        }
+        .nav-links.active {
+          left: 0;
+        }
+        .nav-links li {
+          margin: 15px 0;
+        }
+        .hero-container {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+        .hero-content {
+          padding-right: 0;
+        }
+        .hero-img-container {
+          margin-bottom: 30px;
+          justify-content: center;
+        }
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .hero-btns {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+        .btn-secondary {
+          margin-left: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -30,41 +407,40 @@
           <li><a href="#projects">Dự án</a></li>
           <li><a href="#contact" class="btn-contact">Liên hệ</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <i class="fas fa-bars"></i>
-        </div>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
       </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="about">
       <div class="container hero-container">
         <div class="hero-content">
           <p class="hero-subtitle">Xin chào, tôi là</p>
-          <h1 class="hero-title">Nguyễn Văn A.</h1>
+          <h1 class="hero-title">Phan Lê Bá Khang</h1>
           <h2 class="hero-role">
             Tôi là <span class="typing-text"></span
             ><span class="typing-cursor"></span>
           </h2>
           <p class="hero-desc">
-            Tôi xây dựng các hệ thống backend mạnh mẽ và hiệu quả. Đang tìm kiếm
-            cơ hội thực tập/làm việc để đóng góp và phát triển.
+            Lập trình viên đam mê xây dựng ứng dụng Android và hệ thống Website.
+            Tư duy tốt về Backend (Java, PHP, C#) và khả năng tự thiết kế giao
+            diện Frontend.
           </p>
           <div class="hero-btns">
             <a href="#projects" class="btn btn-primary"
               >Xem Dự Án <i class="fas fa-arrow-down"></i
             ></a>
             <a
-              href="https://github.com/username-cua-ban"
+              href="https://github.com/ITK1"
               target="_blank"
               class="btn btn-secondary"
-              ><i class="fab fa-github"></i> GitHub Profile</a
+              ><i class="fab fa-github"></i> GitHub</a
             >
           </div>
         </div>
         <div class="hero-img-container">
           <img
-            src="assets/profile.jpg"
-            alt="Ảnh đại diện của tôi"
+            src="style/img/anh.jpg"
+            alt="Phan Lê Bá KHang"
             class="hero-img"
           />
         </div>
@@ -73,34 +449,51 @@
 
     <section id="skills" class="section skills-section">
       <div class="container">
-        <h2 class="section-title">Tech Stack Của Tôi</h2>
+        <h2 class="section-title hidden">Tech Stack Của Tôi</h2>
         <div class="skills-grid">
-          <div class="skill-category">
-            <h3><i class="fas fa-server"></i> Backend Core</h3>
+          <div class="skill-category hidden">
+            <h3><i class="fas fa-server"></i> Backend & Mobile</h3>
             <div class="skill-list">
+              <span class="skill-tag"
+                ><i class="fab fa-android"></i> Android (Java)</span
+              >
+              <span class="skill-tag"
+                ><i class="fab fa-java"></i> Java Core</span
+              >
               <span class="skill-tag"><i class="fab fa-php"></i> PHP</span>
-              <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
               <span class="skill-tag">C# (.NET)</span>
             </div>
           </div>
-          <div class="skill-category">
+          <div class="skill-category hidden">
+            <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+            <div class="skill-list">
+              <span class="skill-tag"
+                ><i class="fab fa-html5"></i> HTML5 & CSS3</span
+              >
+              <span class="skill-tag"
+                ><i class="fab fa-js"></i> JavaScript</span
+              >
+              <span class="skill-tag">Responsive</span>
+            </div>
+          </div>
+          <div class="skill-category hidden">
             <h3><i class="fas fa-database"></i> Database</h3>
             <div class="skill-list">
               <span class="skill-tag">MySQL</span>
               <span class="skill-tag">SQL Server</span>
-              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">SQLite</span>
             </div>
           </div>
-          <div class="skill-category">
-            <h3><i class="fas fa-tools"></i> Tools & Khác</h3>
+          <div class="skill-category hidden">
+            <h3><i class="fas fa-tools"></i> Tools</h3>
             <div class="skill-list">
               <span class="skill-tag"
                 ><i class="fab fa-git-alt"></i> Git / GitHub</span
               >
-              <span class="skill-tag"
-                ><i class="fab fa-docker"></i> Docker (Cơ bản)</span
-              >
-              <span class="skill-tag">RESTful API</span>
+              <span class="skill-tag">Android Studio</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Laragon</span>
+              <span class="skill-tag">Visual Studio </span>
             </div>
           </div>
         </div>
@@ -109,101 +502,93 @@
 
     <section id="projects" class="section projects-section">
       <div class="container">
-        <h2 class="section-title">Dự Án Nổi Bật</h2>
-        <p class="section-subtitle">
-          Những dự án thực tế tôi đã thực hiện trong quá trình học tập và nghiên
-          cứu.
+        <h2 class="section-title hidden">Dự Án Nổi Bật</h2>
+        <p class="section-subtitle hidden">
+          Các dự án thực tế tôi đã thực hiện.
         </p>
 
         <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-image">
-              <img src="assets/project1.jpg" alt="Website Bán Hàng PHP" />
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>Website Bán Hàng Điện Tử (PHP)</h3>
-              </div>
-              <p class="project-desc">
-                Hệ thống thương mại điện tử xây dựng bằng PHP thuần theo mô hình
-                MVC. Tính năng bao gồm: Giỏ hàng, Thanh toán, Quản lý đơn hàng
-                cho Admin, Báo cáo doanh thu.
-              </p>
-              <div class="project-tech">
-                <span>PHP (MVC)</span>
-                <span>MySQL</span>
-                <span>Bootstrap 5</span>
-                <span>AJAX</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/username-cua-ban/ten-du-an-1"
-                  target="_blank"
-                  ><i class="fab fa-github"></i> Source Code</a
-                >
-                <a href="#" target="_blank" class="demo-link"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="assets/project2.jpg" alt="Phần mềm Quản lý C#" />
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3>Phần Mềm Quản Lý Thư Viện (C# WinForm)</h3>
-              </div>
-              <p class="project-desc">
-                Ứng dụng Desktop quản lý mượn/trả sách. Sử dụng Entity Framework
-                để thao tác cơ sở dữ liệu, áp dụng kiến trúc 3 lớp. Quản lý độc
-                giả, đầu sách và thống kê vi phạm.
-              </p>
-              <div class="project-tech">
-                <span>C# .NET Framework</span>
-                <span>WinForms</span>
-                <span>SQL Server</span>
-                <span>Entity Framework</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/username-cua-ban/ten-du-an-2"
-                  target="_blank"
-                  ><i class="fab fa-github"></i> Source Code</a
-                >
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
+          <article class="project-card hidden">
             <div class="project-image">
               <img
-                src="https://via.placeholder.com/600x400/1a1a2e/0f3460?text=Java+Project+Screenshot"
-                alt="API Quản lý nhân sự Java"
+                src="assets/android-project.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=Android+App'"
+                alt="App Android"
               />
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3>RESTful API Quản Lý Nhân Sự (Java Spring Boot)</h3>
+                <h3>App Đặt Lịch Xem Phim (Android)</h3>
               </div>
               <p class="project-desc">
-                Xây dựng hệ thống Backend API cho ứng dụng quản lý nhân sự. Sử
-                dụng Spring Boot, Spring Security để xác thực JWT, Hibernate để
-                ORM và viết Unit Test với JUnit.
+                Ứng dụng mobile giúp người dùng theo dõi đặt Lịch chiếu Phim,
+                thanh toán cơ bản. Người dùng dễ dàng đặt online tiện lợi, xem
+                trước lịch chiếu và thời gian
               </p>
               <div class="project-tech">
-                <span>Java 17</span>
-                <span>Spring Boot</span>
-                <span>Spring Security (JWT)</span>
-                <span>PostgreSQL</span>
-                <span>JUnit 5</span>
+                <span>Java Android</span><span>SQLite</span
+                ><span>MPAndroidChart</span>
               </div>
               <div class="project-links">
-                <a
-                  href="https://github.com/username-cua-ban/ten-du-an-3"
-                  target="_blank"
+                <a href="https://github.com/ITK1/QLNS" target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card hidden">
+            <div class="project-image">
+              <img
+                src="assets/php-project.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=PHP+Website'"
+                alt="Web Bán Hàng"
+              />
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Website Thương Mại Điện Tử (PHP)</h3>
+              </div>
+              <p class="project-desc">
+                Hệ thống bán hàng: Giỏ hàng, Thanh toán, Admin Panel, Có API
+                Thanh Toán Tự Động Tĩnh
+                <br /><em style="font-size: 0.85rem; color: #aaa"
+                  >* Note: Đang refactor sang mô hình MVC & OOP.</em
+                >
+              </p>
+              <div class="project-tech">
+                <span>PHP</span><span>MySQL</span><span>HTML/CSS/JS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ITK1/webphp" target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card hidden">
+            <div class="project-image">
+              <img
+                src="assets/csharp-project.jpg"
+                onerror="this.src='https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=CSharp+Winform'"
+                alt="C# Winform"
+              />
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>Phần Mềm Quản Lý Thư Viện (C#)</h3>
+              </div>
+              <p class="project-desc">
+                Ứng dụng Desktop quản lý mượn trả sách. Áp dụng kiến trúc 3 lớp,
+                Entity Framework và SQL Server.(đang Phát triển và Hoàn hiện Dự
+                Án)
+              </p>
+              <div class="project-tech">
+                <span>C# .NET</span><span>WinForms</span><span>SQL Server</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank"
                   ><i class="fab fa-github"></i> Source Code</a
                 >
               </div>
@@ -215,22 +600,19 @@
 
     <section id="contact" class="section contact-section">
       <div class="container">
-        <h2 class="section-title">Liên Hệ Với Tôi</h2>
-        <p class="section-subtitle">
-          Tôi luôn sẵn sàng cho các cơ hội mới. Hãy kết nối nhé!
-        </p>
-        <div class="contact-links">
-          <a href="mailto:email-cua-ban@gmail.com" class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>email-cua-ban@gmail.com</span>
-          </a>
+        <h2 class="section-title hidden">Liên Hệ</h2>
+        <div class="contact-links hidden">
+          <a href="mailto:email@gmail.com" class="contact-item"
+            ><i class="fas fa-envelope"></i
+            ><span>Phanlebakhang1002@gmail.com</span></a
+          >
           <a
-            href="https://linkedin.com/in/username-cua-ban"
+            href="https://www.facebook.com/phan.le.ba.khang.ITK"
             target="_blank"
             class="contact-item"
           >
-            <i class="fab fa-linkedin"></i>
-            <span>LinkedIn Profile</span>
+            <i class="fab fa-facebook"></i>
+            <span>Facebook</span>
           </a>
         </div>
       </div>
@@ -239,10 +621,68 @@
     <footer>
       <p>
         Designed & Built by
-        <span style="color: var(--primary-color)">Nguyễn Văn A</span> | © 2023
+        <span style="color: var(--primary-color)">Phan Lê Bá Khang</span>
       </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      // 1. TYPING EFFECT
+      const typingText = document.querySelector(".typing-text");
+      const words = [
+        "Android Developer",
+        "Web Developer",
+        "Frontend & Backend",
+      ];
+      let wordIndex = 0,
+        charIndex = 0,
+        isDeleting = false;
+
+      const typeEffect = () => {
+        const currentWord = words[wordIndex];
+        const currentChars = currentWord.substring(0, charIndex);
+        typingText.textContent = currentChars;
+
+        if (!isDeleting && charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(typeEffect, 50);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeEffect, 1200);
+        }
+      };
+      typeEffect();
+
+      // 2. SCROLL REVEAL (HIỆN NỘI DUNG KHI CUỘN)
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+      });
+      document
+        .querySelectorAll(".hidden")
+        .forEach((el) => observer.observe(el));
+
+      // 3. STICKY NAVBAR
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      // 4. MOBILE MENU
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      hamburger.addEventListener("click", () =>
+        navLinks.classList.toggle("active")
+      );
+      document.querySelectorAll(".nav-links a").forEach((item) => {
+        item.addEventListener("click", () =>
+          navLinks.classList.remove("active")
+        );
+      });
+    </script>
   </body>
 </html>
