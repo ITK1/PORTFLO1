@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -18,7 +18,7 @@
     />
 
     <style>
-      /* Cấu hình chung */
+      /* --- CẤU HÌNH CSS (GIỮ NGUYÊN) --- */
       :root {
         --bg-main: #0a0a16;
         --bg-secondary: #16213e;
@@ -194,7 +194,7 @@
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
         border: 3px solid var(--primary-color);
         box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
-        background-color: #1a1a2e; /* Màu nền dự phòng nếu ảnh lỗi */
+        background-color: #1a1a2e;
       }
 
       /* Skills */
@@ -240,6 +240,8 @@
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.05);
         transition: 0.3s;
+        display: flex;
+        flex-direction: column;
       }
       .project-card:hover {
         transform: translateY(-10px);
@@ -250,6 +252,7 @@
         height: 200px;
         background-color: #0f182b;
         overflow: hidden;
+        position: relative;
       }
       .project-image img {
         width: 100%;
@@ -258,11 +261,27 @@
         opacity: 0.8;
         transition: 0.3s;
       }
+      /* Nhãn mới cho dự án hot */
+      .badge-new {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: var(--primary-color);
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
       .project-card:hover .project-image img {
         opacity: 1;
       }
       .project-content {
         padding: 25px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       }
       .project-header h3 {
         font-size: 1.25rem;
@@ -272,7 +291,7 @@
         color: var(--text-secondary);
         font-size: 0.9rem;
         margin-bottom: 20px;
-        min-height: 80px;
+        flex: 1; /* Để đẩy phần tech xuống dưới */
       }
       .project-tech {
         display: flex;
@@ -440,7 +459,7 @@
         <div class="hero-img-container">
           <img
             src="style/img/anh.jpg"
-            alt="Phan Lê Bá KHang"
+            alt="Phan Lê Bá Khang"
             class="hero-img"
           />
         </div>
@@ -490,10 +509,9 @@
               <span class="skill-tag"
                 ><i class="fab fa-git-alt"></i> Git / GitHub</span
               >
+              <span class="skill-tag">Visual Studio</span>
               <span class="skill-tag">Android Studio</span>
               <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">Laragon</span>
-              <span class="skill-tag">Visual Studio </span>
             </div>
           </div>
         </div>
@@ -510,9 +528,48 @@
         <div class="projects-grid">
           <article class="project-card hidden">
             <div class="project-image">
+              <span class="badge-new">Mới nhất</span>
+              <img
+                src="style/img/Cshrapp.jpg"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=Auto+Post+Tool'
+                "
+                alt="AutoWpTool"
+              />
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3>AutoWpTool - Tool Đăng Bài Tự Động</h3>
+              </div>
+              <p class="project-desc">
+                Phần mềm Desktop hỗ trợ Marketing soạn thảo chuẩn SEO và đăng
+                bài lên WordPress tự động qua API.
+                <br />
+                - Tích hợp Editor HTML, Chèn ảnh thông minh.<br />
+                - Quản lý tài khoản, mật khẩu mã hóa.<br />
+                - Xử lý bất đồng bộ (Async/Await) mượt mà.
+              </p>
+              <div class="project-tech">
+                <span>C# WinForms</span><span>WordPress API</span
+                ><span>JSON</span><span>.NET</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ITK1" target="_blank"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card hidden">
+            <div class="project-image">
               <img
                 src="style/img/android.jpg"
-                onerror="this.src='https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=Android+App'"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=Android+App'
+                "
                 alt="App Android"
               />
             </div>
@@ -521,10 +578,9 @@
                 <h3>App Quản Lý Nhân Sự (Android)</h3>
               </div>
               <p class="project-desc">
-                Ứng dụng mobile giúp người Admin Dễ Dàng Quản lý nhân sự, điểm
-                danh, tính lương, theo dõi.
+                Ứng dụng mobile giúp Admin dễ dàng quản lý nhân sự, điểm danh,
+                tính lương và theo dõi hiệu suất.
               </p>
-
               <div class="project-tech">
                 <span>Java Android</span><span>SQLite</span
                 ><span>MPAndroidChart</span>
@@ -541,7 +597,10 @@
             <div class="project-image">
               <img
                 src="style/img/Php.png"
-                onerror="this.src='https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=PHP+Website'"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=PHP+Website'
+                "
                 alt="Web Bán Hàng"
               />
             </div>
@@ -550,8 +609,7 @@
                 <h3>Website Thương Mại Điện Tử (PHP)</h3>
               </div>
               <p class="project-desc">
-                Hệ thống bán hàng: Giỏ hàng, Thanh toán, Admin Panel, Có API
-                Thanh Toán Tự Động Tĩnh
+                Hệ thống bán hàng trọn gói: Giỏ hàng, Thanh toán, Admin Panel.
                 <br /><em style="font-size: 0.85rem; color: #aaa"
                   >* Note: Đang refactor sang mô hình MVC & OOP.</em
                 >
@@ -567,22 +625,24 @@
             </div>
           </article>
 
-          <article class="project-card hidden">
+          <!-- <article class="project-card hidden">
             <div class="project-image">
               <img
                 src="style/img/Cshrap.jpg"
-                onerror="this.src='https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=CSharp+Winform'"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/600x400/1a1a2e/00d4ff?text=Library+Manager'
+                "
                 alt="C# Winform"
               />
-            </div>
-            <div class="project-content">
+            </div> -->
+          <!-- <div class="project-content">
               <div class="project-header">
                 <h3>Phần Mềm Quản Lý Thư Viện (C#)</h3>
               </div>
               <p class="project-desc">
                 Ứng dụng Desktop quản lý mượn trả sách. Áp dụng kiến trúc 3 lớp,
-                Entity Framework và SQL Server.(đang Phát triển và Hoàn hiện Dự
-                Án)
+                Entity Framework và SQL Server.
               </p>
               <div class="project-tech">
                 <span>C# .NET</span><span>WinForms</span><span>SQL Server</span>
@@ -591,9 +651,9 @@
                 <a href="#" target="_blank"
                   ><i class="fab fa-github"></i> Source Code</a
                 >
-              </div>
-            </div>
-          </article>
+              </div> -->
+          <!-- </div>
+          </article> -->
         </div>
       </div>
     </section>
@@ -602,17 +662,16 @@
       <div class="container">
         <h2 class="section-title hidden">Liên Hệ</h2>
         <div class="contact-links hidden">
-          <a href="mailto:email@gmail.com" class="contact-item"
-            ><i class="fas fa-envelope"></i
-            ><span>Phanlebakhang1002@gmail.com</span></a
-          >
+          <a href="mailto:Phanlebakhang1002@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i
+            ><span>Phanlebakhang1002@gmail.com</span>
+          </a>
           <a
             href="https://www.facebook.com/phan.le.ba.khang.ITK"
             target="_blank"
             class="contact-item"
           >
-            <i class="fab fa-facebook"></i>
-            <span>Facebook</span>
+            <i class="fab fa-facebook"></i><span>Facebook</span>
           </a>
         </div>
       </div>
@@ -628,11 +687,7 @@
     <script>
       // 1. TYPING EFFECT
       const typingText = document.querySelector(".typing-text");
-      const words = [
-        "Android Developer",
-        "Web Developer",
-        "Frontend & Backend",
-      ];
+      const words = ["Android Developer", "Web Developer", "C# .NET Developer"];
       let wordIndex = 0,
         charIndex = 0,
         isDeleting = false;
@@ -656,7 +711,7 @@
       };
       typeEffect();
 
-      // 2. SCROLL REVEAL (HIỆN NỘI DUNG KHI CUỘN)
+      // 2. SCROLL REVEAL
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) entry.target.classList.add("show");
@@ -675,12 +730,14 @@
       // 4. MOBILE MENU
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("navLinks");
+
       hamburger.addEventListener("click", () =>
-        navLinks.classList.toggle("active")
+        navLinks.classList.toggle("active"),
       );
+
       document.querySelectorAll(".nav-links a").forEach((item) => {
         item.addEventListener("click", () =>
-          navLinks.classList.remove("active")
+          navLinks.classList.remove("active"),
         );
       });
     </script>
