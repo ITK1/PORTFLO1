@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phan Lê Bá Khang | PHP Developer (Fresher)</title>
+    <title>Phan Lê Bá Khang | PHP Developer (2 Years Freelance)</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,25 +90,7 @@
       .logo {
         font-family: var(--font-code);
         font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--primary-color);
-      }
-      .nav-links {
-        display: flex;
-        align-items: center;
-      }
-      .nav-links li {
-        margin-left: 30px;
-      }
-      .nav-links a:hover {
-        color: var(--primary-color);
-      }
-      .btn-contact {
-        padding: 8px 20px;
-        background-color: rgba(0, 212, 255, 0.1);
-        border-radius: 4px;
-        color: var(--primary-color) !important;
-        border: 1px solid var(--primary-color);
+        letter-spacing: -1px;
       }
 
       /* Hero */
@@ -212,7 +194,6 @@
       .project-card:hover {
         transform: translateY(-10px);
         border-color: var(--primary-color);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       }
       .project-image {
         width: 100%;
@@ -224,10 +205,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: 0.5s;
-      }
-      .project-card:hover .project-image img {
-        transform: scale(1.1);
       }
       .badge {
         position: absolute;
@@ -272,20 +249,45 @@
         padding: 3px 10px;
         border-radius: 4px;
       }
+
+      /* Buttons */
+      .project-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
       .project-links a {
         color: var(--primary-color);
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         border: 1px solid var(--primary-color);
-        padding: 8px 15px;
+        padding: 8px 12px;
         border-radius: 5px;
       }
-      .project-links a:hover {
+      .project-links a.demo-btn {
         background: var(--primary-color);
         color: #000;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+      .nav-links li {
+        margin-left: 30px;
+      }
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+      .btn-contact {
+        padding: 8px 20px;
+        background-color: rgba(0, 212, 255, 0.1);
+        border-radius: 4px;
+        color: var(--primary-color) !important;
+        border: 1px solid var(--primary-color);
       }
 
       /* Animations */
@@ -323,14 +325,19 @@
         }
         .nav-links {
           display: none;
-        } /* Giản lược cho mobile */
+        }
       }
     </style>
   </head>
   <body>
     <nav class="navbar">
       <div class="container nav-container">
-        <a href="#" class="logo">&lt;Khang.Dev&gt;</a>
+        <a href="#" class="logo">
+          <span style="font-weight: 700; color: #fff">Khang</span
+          ><span style="font-weight: 400; color: var(--primary-color)"
+            >.php</span
+          >
+        </a>
         <ul class="nav-links">
           <li><a href="#about">Về Tôi</a></li>
           <li><a href="#skills">Kỹ Năng</a></li>
@@ -343,18 +350,24 @@
     <header class="hero" id="about">
       <div class="container hero-container">
         <div class="hero-content">
-          <p class="hero-subtitle">Sinh viên năm cuối CNTT tại Cần Thơ</p>
+          <p class="hero-subtitle">
+            PHP Developer | 2 Năm Freelance | 3 Tháng WordPress
+          </p>
           <h1 class="hero-title">Phan Lê Bá Khang</h1>
           <h2 class="hero-role">
             Tôi là <span class="typing-text"></span
             ><span class="typing-cursor"></span>
           </h2>
           <p class="hero-desc">
-            Hiện đang theo học tại Trường Cao đẳng Kinh tế - Kỹ thuật Cần
-            Thơ[cite: 17]. Tôi có nền tảng vững chắc về
-            <strong>PHP & MySQL</strong>, đam mê xây dựng các hệ thống quản lý
-            thực tế và luôn sẵn sàng học hỏi các công nghệ mới như Laravel để
-            phát triển sự nghiệp chuyên nghiệp[cite: 18, 44].
+            Sinh viên năm cuối CNTT tại Cần Thơ[cite: 17]. Với
+            <strong
+              >2 năm kinh nghiệm làm Website PHP cho khách hàng cá nhân</strong
+            >
+            [cite: 7, 8, 61] và
+            <strong>3 tháng thực chiến với WordPress</strong>[cite: 71, 73], tôi
+            sở hữu tư duy logic Backend vững chắc và khả năng triển khai hệ
+            thống thực tế hiệu quả. Sẵn sàng mang kỹ năng của mình đóng góp cho
+            đội ngũ BeyondEdge.
           </p>
           <div class="hero-btns">
             <a
@@ -368,7 +381,7 @@
                 display: inline-block;
               "
             >
-              Khám Phá Dự Án <i class="fas fa-code"></i>
+              Khám Phá Dự Án <i class="fas fa-arrow-down"></i>
             </a>
           </div>
         </div>
@@ -388,42 +401,32 @@
 
     <section id="skills" class="section skills-section">
       <div class="container">
-        <h2 class="section-title hidden">Kỹ Năng Chuyên Môn</h2>
-        <p class="section-subtitle hidden">
-          Tập trung vào phát triển Web Back-end và Ứng dụng Mobile [cite: 42]
-        </p>
+        <h2 class="section-title hidden">Kinh Nghiệm & Kỹ Năng</h2>
         <div class="skills-grid">
           <div class="skill-category hidden">
-            <h3><i class="fab fa-php"></i> Web Development</h3>
+            <h3><i class="fab fa-php"></i> PHP & WordPress</h3>
             <div class="skill-list">
               <span class="skill-tag">PHP (MVC/OOP) [cite: 19]</span>
-              <span class="skill-tag">Laravel (Basic)</span>
-              <span class="skill-tag">MySQL (Stored Proc)</span>
+              <span class="skill-tag">2 Năm Freelance [cite: 7, 8]</span>
               <span class="skill-tag">WordPress API [cite: 75]</span>
+              <span class="skill-tag">MySQL (Stored Proc)</span>
             </div>
           </div>
           <div class="skill-category hidden">
-            <h3><i class="fas fa-laptop-code"></i> Front-end</h3>
+            <h3><i class="fas fa-laptop-code"></i> Frontend & Tools</h3>
             <div class="skill-list">
+              <span class="skill-tag">JS (AJAX)</span>
               <span class="skill-tag">HTML5 / CSS3 [cite: 3]</span>
-              <span class="skill-tag">JavaScript (AJAX)</span>
-              <span class="skill-tag">Responsive Design [cite: 52]</span>
-            </div>
-          </div>
-          <div class="skill-category hidden">
-            <h3><i class="fab fa-android"></i> Mobile & App</h3>
-            <div class="skill-list">
-              <span class="skill-tag">Android (Java) [cite: 14]</span>
-              <span class="skill-tag">C# (.NET) [cite: 71]</span>
-              <span class="skill-tag">SQLite [cite: 70]</span>
-            </div>
-          </div>
-          <div class="skill-category hidden">
-            <h3><i class="fas fa-tools"></i> Công Cụ & Khác</h3>
-            <div class="skill-list">
               <span class="skill-tag">Git / GitHub [cite: 36]</span>
+              <span class="skill-tag">Responsive Design</span>
+            </div>
+          </div>
+          <div class="skill-category hidden">
+            <h3><i class="fas fa-briefcase"></i> Thông Tin Khác</h3>
+            <div class="skill-list">
+              <span class="skill-tag">Sinh Viên Năm Cuối </span>
               <span class="skill-tag">English (TOEIC) [cite: 23]</span>
-              <span class="skill-tag">Self-Learning [cite: 20]</span>
+              <span class="skill-tag">Làm Việc Tại Cần Thơ [cite: 47]</span>
             </div>
           </div>
         </div>
@@ -432,21 +435,17 @@
 
     <section id="projects" class="section">
       <div class="container">
-        <h2 class="section-title hidden">Dự Án Đã Thực Hiện</h2>
-        <p class="section-subtitle hidden">
-          Từ Website quản lý đến Tool tự động hóa và App Mobile [cite: 43]
-        </p>
-
+        <h2 class="section-title hidden">Dự Án Nổi Bật</h2>
         <div class="projects-grid">
           <article class="project-card hidden">
             <div class="project-image">
-              <span class="badge">Nổi bật</span>
+              <span class="badge">PHP Flagship</span>
               <img
-                src="style/img/gym.jpg"
+                src="style/img/gym.png"
                 alt="Gym Master"
                 onerror="
                   this.src =
-                    'https://via.placeholder.com/600x400/16213e/00d4ff?text=Gym+Master+System'
+                    'https://via.placeholder.com/600x400/16213e/00d4ff?text=Gym+Master+PHP'
                 "
               />
             </div>
@@ -455,17 +454,24 @@
                 <h3>Gym Master - Web Quản Lý Gym</h3>
               </div>
               <p class="project-desc">
-                Hệ thống quản lý hội viên, nhân viên và gói tập. Tích hợp thanh
-                toán tự động qua <strong>API QR Code</strong>[cite: 25, 34]. Sử
-                dụng mô hình MVC để xử lý logic chặt chẽ[cite: 11].
+                Hệ thống quản lý hội viên và gói tập chuyên sâu[cite: 25]. Tích
+                hợp thanh toán
+                <strong>API QR Code</strong> tự động[cite: 34]. Đặc biệt, hệ
+                thống được tối ưu bảo mật với lớp phòng thủ
+                <strong>Anti-DDoS</strong>
+                giúp ngăn chặn tấn công và đảm bảo vận hành ổn định[cite: 73,
+                11].
               </p>
               <div class="project-tech">
-                <span>PHP</span><span>MySQL</span><span>MVC</span
-                ><span>QR API</span>
+                <span>PHP</span><span>MySQL</span><span>Anti-DDoS</span
+                ><span>MVC</span>
               </div>
               <div class="project-links">
                 <a href="https://github.com/ITK1/gympt.git" target="_blank"
-                  ><i class="fab fa-github"></i> Xem Code</a
+                  ><i class="fab fa-github"></i> Code</a
+                >
+                <a href="https://gympt.xo.je/" class="demo-btn" target="_blank"
+                  ><i class="fas fa-eye"></i> Xem Demo</a
                 >
               </div>
             </div>
@@ -483,19 +489,25 @@
               />
             </div>
             <div class="project-content">
-              <div class="project-header"><h3>Website Bán Hàng (PHP)</h3></div>
+              <div class="project-header">
+                <h3>Website Bán Hàng (Freelance)</h3>
+              </div>
               <p class="project-desc">
-                Xây dựng theo yêu cầu khách hàng với đầy đủ chức năng: Giỏ hàng,
-                thanh toán online, quản lý đơn hàng[cite: 60, 62]. Sử dụng AJAX
-                để tăng trải nghiệm người dùng.
+                Dự án <strong>làm cho khách hàng thuê</strong> với đầy đủ tính
+                năng: Giỏ hàng, thanh toán, Admin Panel[cite: 60, 61, 62].
               </p>
               <div class="project-tech">
-                <span>PHP</span><span>MySQL</span><span>AJAX</span
-                ><span>HTML/CSS</span>
+                <span>PHP</span><span>AJAX</span><span>MySQL</span>
               </div>
               <div class="project-links">
                 <a href="https://github.com/ITK1/webphp.git" target="_blank"
-                  ><i class="fab fa-github"></i> Xem Code</a
+                  ><i class="fab fa-github"></i> Code</a
+                >
+                <a
+                  href="LINK_DEMO_WEB_BAN_HANG"
+                  class="demo-btn"
+                  target="_blank"
+                  ><i class="fas fa-eye"></i> Xem Demo</a
                 >
               </div>
             </div>
@@ -508,26 +520,26 @@
                 alt="C# Tool"
                 onerror="
                   this.src =
-                    'https://via.placeholder.com/600x400/16213e/00d4ff?text=Auto+WordPress+Tool'
+                    'https://via.placeholder.com/600x400/16213e/00d4ff?text=WordPress+Tool'
                 "
               />
             </div>
             <div class="project-content">
               <div class="project-header">
-                <h3>AutoWpTool - Tool Đăng Bài C#</h3>
+                <h3>AutoWpTool - Tool WordPress</h3>
               </div>
               <p class="project-desc">
-                Phần mềm desktop hỗ trợ đăng bài tự động lên WordPress qua
-                API[cite: 73]. Xử lý <strong>Async/Await</strong> để upload ảnh
-                mượt mà[cite: 76].
+                Tool Desktop hỗ trợ
+                <strong>đăng bài tự động lên WordPress</strong> thông qua API,
+                tối ưu SEO[cite: 71, 73, 75].
               </p>
               <div class="project-tech">
-                <span>C# WinForms</span><span>RESTful API</span
-                ><span>JSON</span>
+                <span>C# WinForms</span><span>WordPress API</span
+                ><span>Async</span>
               </div>
               <div class="project-links">
                 <a href="https://github.com/ITK1/AutoWpTool" target="_blank"
-                  ><i class="fab fa-github"></i> Xem Code</a
+                  ><i class="fab fa-github"></i> Code</a
                 >
               </div>
             </div>
@@ -540,7 +552,7 @@
                 alt="Android HR"
                 onerror="
                   this.src =
-                    'https://via.placeholder.com/600x400/16213e/00d4ff?text=HR+Management+App'
+                    'https://via.placeholder.com/600x400/16213e/00d4ff?text=Android+HR+App'
                 "
               />
             </div>
@@ -549,16 +561,15 @@
                 <h3>App Quản Lý Nhân Sự (Android)</h3>
               </div>
               <p class="project-desc">
-                Ứng dụng chấm công, tính lương và quản lý hồ sơ nhân viên[cite:
-                66, 68]. Lưu trữ dữ liệu cục bộ bằng SQLite chuyên nghiệp[cite:
-                70].
+                Ứng dụng chấm công và quản lý hồ sơ nhân viên[cite: 65, 66, 68].
+                Lưu trữ SQLite chuyên nghiệp[cite: 70].
               </p>
               <div class="project-tech">
                 <span>Java</span><span>Android Studio</span><span>SQLite</span>
               </div>
               <div class="project-links">
                 <a href="https://github.com/ITK1/QLNS.git" target="_blank"
-                  ><i class="fab fa-github"></i> Xem Code</a
+                  ><i class="fab fa-github"></i> Code</a
                 >
               </div>
             </div>
@@ -571,7 +582,8 @@
       <div class="container" style="text-align: center">
         <h2 class="section-title hidden">Sẵn Sàng Làm Việc</h2>
         <p class="section-subtitle hidden">
-          Tôi đang tìm kiếm cơ hội thực tập/Fresher tại Cần Thơ [cite: 44, 47]
+          2 Năm Freelance - Sẵn sàng cho vị trí PHP Fresher tại Cần Thơ [cite:
+          44, 47]
         </p>
         <div
           style="
@@ -579,6 +591,7 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            margin-top: 30px;
           "
         >
           <a
@@ -611,14 +624,17 @@
     >
       <p>
         &copy; 2026 Phan Lê Bá Khang. Built with
-        <span style="color: #e25555">&hearts;</span> in Cần Thơ.
+        <span style="color: var(--primary-color)">&hearts;</span> in Cần Thơ.
       </p>
     </footer>
 
     <script>
-      // Typing Effect
       const typingText = document.querySelector(".typing-text");
-      const words = ["PHP Developer", "Web Developer", "Android Enthusiast"];
+      const words = [
+        "PHP Developer",
+        "Freelance Expert",
+        "WordPress Specialist",
+      ];
       let wordIndex = 0,
         charIndex = 0,
         isDeleting = false;
@@ -627,7 +643,6 @@
         const currentWord = words[wordIndex];
         const currentChars = currentWord.substring(0, charIndex);
         typingText.textContent = currentChars;
-
         if (!isDeleting && charIndex < currentWord.length) {
           charIndex++;
           setTimeout(typeEffect, 100);
@@ -642,7 +657,6 @@
       };
       typeEffect();
 
-      // Scroll Reveal
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
